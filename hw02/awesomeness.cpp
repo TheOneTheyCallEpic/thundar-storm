@@ -3,7 +3,6 @@
 #include <cstdlib>
 #include <ctime>
 
-int main(){
 
 	switch (awesome){ 
 
@@ -42,6 +41,6 @@ int main(){
 			break;
 
 
-
+			return 0;
 	}
-}
+
