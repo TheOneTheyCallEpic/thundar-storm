@@ -3,6 +3,6 @@
 
 //Declarations of functions
 
-void readPPM();
+unsigned char*  readPPM(const char* fileName, char* magicNum, int* ppmW, int* ppmH, int* ppmMax);
 //void writePPM();
 #endif
