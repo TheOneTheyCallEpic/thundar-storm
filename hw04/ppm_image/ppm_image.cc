@@ -15,10 +15,7 @@ fscanf(readF, "%s", magicNum);
 if (strncmp(magicNum, "P6", 10) != 0 ){
 	printf("Not a PPM file!");
 }
-else {
-	printf("");
 
-}
 
 //Reads header file
 
@@ -69,7 +66,7 @@ int ppmSize=423800;
 
 void writePPM(){
 
-FILE* fpPPM =fopen("test.ppm","w"); //Opens file. "w" means writing
+FILE* writeF =fopen("test.ppm","w"); //Opens file. "w" means writing
 
-
+fclose(writeF);
  }
