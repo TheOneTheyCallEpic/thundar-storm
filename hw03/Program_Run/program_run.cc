@@ -1,18 +1,25 @@
-#include <iostream>
-#include <"program_run.h">
-#include <fstream>
+#include <cstdio>
+#include "program_run.h"
 
 
-int program_run(int n){
 
-FILE* fp = fopen("numfile.txt", “r”); //Opens file
-EOF=false;
-int n;
+int program_run(){
 
-while(fscanf(fp, “%d”, value) != EOF) {
+FILE* file = fopen("numfile.txt", "r"); //Opens file
+int n=0;
 
-printf(“%d\n”, value); }
-fclose(fp);
+while(fscanf(file, "%d" , &n) != EOF) {
+
+printf("%d" , n); 
+}
+
+fclose(file);
+
+n+=1;
+FILE* file2 = fopen("numfile.txt", "w"); //Writes file
+fprintf(file2, "%d", n);
+
+fclose(file2);
 
 return 0;
 

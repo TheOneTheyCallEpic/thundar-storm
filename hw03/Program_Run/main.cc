@@ -1,17 +1,11 @@
-#include <cstdlib>
-#include <iostream>
-#include <fstream>
-#include <"program_run.h">
+#include <cstdio>
+#include "program_run.h"
 
 using namespace std;
 
-int main(int argc, char** argv) {
+int main() {
 
-    FILE* fp = fopen(“filename”, “r”);
-int value;
-while(fscanf(fp, “%d”, value) != EOF) {
-printf(“%d\n”, value); }
-fclose(fp);
+    program_run();
     return 0;
 }
 
