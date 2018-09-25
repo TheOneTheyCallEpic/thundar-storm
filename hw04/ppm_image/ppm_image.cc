@@ -9,6 +9,7 @@ unsigned char*  readPPM(const char* fileName, char* magicNum, int* ppmW, int* pp
 // char stringCopy[81];
 
 FILE* readF=fopen ("test.ppm", "r"); //Reads file
+
 fscanf(readF, "%s", magicNum);
 
 //Checks if file is PPM format
@@ -19,7 +20,7 @@ if (strncmp(magicNum, "P6", 10) != 0 ){
 
 //Reads header file
 
-fscanf(readF, "%d\n %d\n", ppmW, ppmH); 
+fscanf(readF, "%d %d\n", ppmW, ppmH); 
 
 
 fscanf(readF, "%d\n", ppmMax);
@@ -34,12 +35,11 @@ printf("%d %d\n", *ppmW, *ppmH);
 //Prints out maximum number of pixles in PPM file
 printf("%d\n", *ppmMax);
 
-//int size = width * height;
-//In this case: 250 * 252=423800
-int ppmSize=423800;
+//int size = width * height*3;
+int ppmSize=3*ppmW*ppmH;
 
 // allocate array for pixels
- unsigned char* pixels = new unsigned char[ppmSize];
+ new unsigned char* pixels = new unsigned char[ppmSize];
 
 //-----------------------------------------------------------------------
 
@@ -48,10 +48,15 @@ int ppmSize=423800;
 	// } // end of for loop
 
 	// close file
-	fclose(readF);
+
+//-----------------------------------------------------------------------
+
+	fread(readF, pixels, sizeof(unsigned char), ppmSize);
+
+ 	fclose(readF);
 
 	return pixels;
-//-----------------------------------------------------------------------
+
 // for(int i=0; string[i] !='\0'; ++i){
 // 	stringCopy[i]=string[i];
 // }
@@ -67,6 +72,8 @@ int ppmSize=423800;
 void writePPM(){
 
 FILE* writeF =fopen("test.ppm","w"); //Opens file. "w" means writing
+
+
 
 fclose(writeF);
  }
