@@ -12,4 +12,6 @@ int main(){
 	//int ppmSize = 128;
 
 	unsigned char* pArray = readPPM(fileName, magicNum, &ppmW, &ppmH, &ppmMax);
+
+	
 }//End of main.
