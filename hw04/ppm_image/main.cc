@@ -1,5 +1,6 @@
 #include <iostream>
-#include "ppm_image.h"
+#include "ppm_read.h"
+#include "ppm_write.h"
 #include <fstream>
 
 
@@ -13,5 +14,6 @@ int main(){
 
 	unsigned char* pArray = readPPM(fileName, magicNum, &ppmW, &ppmH, &ppmMax);
 
-	
+	writePPM(magicNum, &ppmW, &ppmH, &ppmMax, pArray);
+
 }//End of main.

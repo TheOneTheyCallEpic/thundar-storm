@@ -1,10 +1,13 @@
 all : main
 
-ppm_image.o: ppm_image.cc ppm_image.h
-	g++ -c ppm_image.cc
+ppm_read.o: ppm_read.cc ppm_read.h
+	g++ -c ppm_read.cc
 
-main.o: main.cc ppm_image.h
+ppm_write.o: ppm_write.cc ppm_write.h
+	g++ -c ppm_write.cc	
+
+main.o: main.cc ppm_read.h 
 	g++ -c main.cc
 
-main: main.o ppm_image.o
-	g++ -o main main.o ppm_image.o
+main: main.o ppm_write.o ppm_read.o
+	g++ -o main main.o ppm_write.o ppm_read.o

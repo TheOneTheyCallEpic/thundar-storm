@@ -1,5 +1,5 @@
 #include <iostream>
-#include "ppm_image.h"
+#include "ppm_read.h"
 #include <fstream>
 
 unsigned char*  readPPM(const char* fileName, char* magicNum, int* ppmW, int* ppmH, int* ppmMax){ //Reads ppm image file
@@ -36,11 +36,12 @@ printf("%d\n", *ppmMax);
 
 //int size = width * height;
 //In this case: 250 * 252=423800
-int ppmSize=423800; //Need to find a way to multiply ppmW and ppmH with 3
+int ppmSize = *ppmW * *ppmH * 3; //multiply ppmW and ppmH with 3
 
 // allocate array for pixels
 unsigned char* pixels = new unsigned char[ppmSize];
 
+fread(pixels, sizeof(unsigned char), ppmSize, readF);
 //-----------------------------------------------------------------------
 
 
@@ -59,18 +60,3 @@ unsigned char* pixels = new unsigned char[ppmSize];
 
 // fclose(fpPPM);
 }
-
-
-
-void writePPM(char* magicNum, int* ppmW, int* ppmH, int* ppmMax, unsigned char* pixels){
-
-FILE* writeF =fopen("result.ppm","wb"); //Opens file. "wb" to write the pixels 
-
-int totalPixels = *ppmW * *ppmH * 3; //Total pixels
-
-fprintf(writeF, "%s\n%d %d\n%d", magicNum, *ppmW, *ppmH, *ppmMax); //Header
-
-fwrite(pixels, sizeof(unsigned char), totalPixels, writeF);
-
-fclose(writeF);
- }
