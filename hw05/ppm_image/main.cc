@@ -2,6 +2,7 @@
 #include "ppm_read.h"
 #include "ppm_write.h"
 #include <fstream>
+#include <cstring> 
 
 
 int main(){
@@ -10,7 +11,6 @@ int main(){
 	int ppmW = 0;
 	int ppmH = 0;
 	int ppmMax = 0;
-	//int ppmSize = 128;
 
 	unsigned char* pArray = readPPM(fileName, magicNum, &ppmW, &ppmH, &ppmMax);
 
