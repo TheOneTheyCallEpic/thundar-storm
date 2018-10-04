@@ -1,4 +1,4 @@
-#include <iostream>
+#include <cstdio>
 #include "ppm_read.h"
 #include "ppm_write.h"
 #include <fstream>
