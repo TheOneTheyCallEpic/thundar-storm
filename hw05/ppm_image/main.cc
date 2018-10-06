@@ -1,6 +1,7 @@
 #include <cstdio>
 #include "ppm_read.h"
 #include "ppm_write.h"
+#include "ppm_jpeg.h"
 #include <fstream>
 #include <cstring> 
 
@@ -13,7 +14,5 @@ int main(){
 	int ppmMax = 0;
 
 	unsigned char* pArray = readPPM(fileName, magicNum, &ppmW, &ppmH, &ppmMax);
-
-	writePPM(magicNum, &ppmW, &ppmH, &ppmMax, pArray);
 
 }//End of main.

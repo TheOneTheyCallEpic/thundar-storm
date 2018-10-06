@@ -3,6 +3,6 @@
 
 //Declarations of functions
 
-void  jpegConvert(int* ppmW, int* ppmH, int* ppmMax, unsigned char* pixels);
+void  jpegConvert(int* ppmW, int* ppmH, unsigned char* pixels);
 
 #endif

@@ -14,3 +14,4 @@ main.o: main.cc ppm_read.h
 
 main: main.o ppm_write.o ppm_read.o ppm_jpeg.o
 	g++ -o main main.o ppm_write.o ppm_read.o ppm_jpeg.o
+	g++ -o main main.o ppm_write.o ppm_read.o ppm_jpeg.o -jpeg
