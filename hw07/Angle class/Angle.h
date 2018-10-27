@@ -5,21 +5,18 @@ class Angle {
 
 private:
   double a1;
-  double a2;
-  double a3;
 
 
 public:
   Angle();
-  Angle(double a1, double a2);
+  Angle(double a1);
   virtual ~Angle();
 
   double getA1() const;
-  double getA2() const;
-  double getA3() const;
 
 
-  void set (double a1, double a2);
+
+  void set (double a1);
 }; //End of Angle class
 
 #endif
