@@ -1,9 +1,10 @@
 #include "Angle.h"
+#include "Fish.h"
+#include "Population.h"
 #include <iostream>
-#include <cmath>
 
 int main(){
 
-return 0;
+
 
 }
