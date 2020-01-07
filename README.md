@@ -1,2 +1,2 @@
 # thundar-storm
-Yep, this is a repository. 
+Repository for C/C++ course. 
